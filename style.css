@@ -1,4 +1,5 @@
 h1{
+  font-family: "Times New Roman", Times, serif;
   color:teal;
   
 }
@@ -30,8 +31,12 @@ input {
   margin-left:10px;
   border: 1px solid green;
 }
-body{
-  background-color: #b3e6ff;
+html{
+
+
+    background-image: linear-gradient(to right, lightgreen, #cccc00);
+    
+  /*background-color: #b3e6ff;*/
 }
 .round{
 
