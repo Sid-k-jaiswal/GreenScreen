@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Green Screen</title>
+
+<script type="text/javascript" src="main.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<h1>This is for changing green screen !</h1>
+<body>
+<canvas id ="can1">
+</canvas>
+<canvas id ="can2">
+</canvas>
+<canvas id ="can3">
+</canvas>
+    <p>Green Screen Image : </p>
+  <p>
+    <input type = "file" multiple="flase" accept="image/*" id = "finput1" onchange="uploadfgimage()">
+</p>
+Background Image :
+  <p>
+    <input type="file" multiple="false" accept ="image/*"  id = "finput2" onchange="uploadbgimage()">
+</p>
+<input class="rect"  type ="button" value ="change background" onclick="compose()">
+  <input class="round" type="button" value="clear" id="clr" onclick="clearcanvas()">
+</body>
+</html>
