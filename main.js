@@ -401,7 +401,50 @@ var image2=null;
 var imgcanvas1=null;
 var imgcanvas2=null;
 var imgcanvas3=null;
+//_________________________________________________________________________
 
+
+
+window.onload = function(){
+  var dwn = document.getElementById('btndownload'),
+      canvas = document.getElementById('canvas'),
+      context = canvas.getContext('2d');
+
+  dwn.onclick = function(){
+    download(canvas, 'merge.png');
+  }
+
+}
+
+function download(canvas, filename) {
+  /// create an "off-screen" anchor tag
+  var lnk = document.createElement('a'), e;
+
+  lnk.download = filename;
+
+  lnk.href = canvas.toDataURL("image/png;base64");
+
+  if (document.createEvent) {
+    e = document.createEvent("MouseEvents");
+    e.initMouseEvent("click", true, true, window,
+                     0, 0, 0, 0, 0, false, false, false,
+                     false, 0, null);
+
+    lnk.dispatchEvent(e);
+  } else if (lnk.fireEvent) {
+    lnk.fireEvent("onclick");
+  }
+}
+
+
+
+
+
+
+
+
+
+//__________________________________________________________________________
 function uploadfgimage(){
   imgcanvas1=document.getElementById("can1");
   var fileinput1 = document.getElementById("finput1");
@@ -439,8 +482,43 @@ for(var i of image1.values()){
         image3.setPixel(i.getX(),i.getY(),i);
     }
 }
-  imgcanvas3 = document.getElementById("can3");
+  imgcanvas3 = document.getElementById("canvas");
   image3.drawTo(imgcanvas3);
+//----------------------------------------------------------------------------------------del
+
+//    window.onload = function(){
+//   var dwn = document.getElementById('btndownload'),
+//       canvas = document.getElementById('canvas'),
+//       context = canvas.getContext('2d');
+
+//   dwn.onclick = function(){
+//     download(canvas, 'myimage.png');
+//   }
+
+// }
+
+// function download(canvas, filename) {
+//   /// create an "off-screen" anchor tag
+//   var lnk = document.createElement('a'), e;
+
+//   lnk.download = filename;
+
+//   lnk.href = canvas.toDataURL("image/png;base64");
+
+//   if (document.createEvent) {
+//     e = document.createEvent("MouseEvents");
+//     e.initMouseEvent("click", true, true, window,
+//                      0, 0, 0, 0, 0, false, false, false,
+//                      false, 0, null);
+
+//     lnk.dispatchEvent(e);
+//   } else if (lnk.fireEvent) {
+//     lnk.fireEvent("onclick");
+//   }
+// }
+
+
+  //.....................................................................................del
   }
 }
 
